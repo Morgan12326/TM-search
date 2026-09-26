@@ -120,6 +120,14 @@ push：
 git push -u origin main
 ```
 
+## 成品发布渠道
+
+功能演示和面向普通用户的桌面版、APK 成品由作者发布在：
+
+[https://www.bilibili.com/video/BV1yNhz6cE9Z/](https://www.bilibili.com/video/BV1yNhz6cE9Z/)
+
+请以视频评论区中作者本人发布的置顶评论为准。GitHub Release 可同时提供数据包和校验文件。
+
 ## 数据获取方式
 
 ### 数据可以受控分发

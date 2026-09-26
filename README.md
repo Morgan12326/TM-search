@@ -2,6 +2,13 @@
 
 型月搜索是一个仅在本机运行的 Type-Moon 资料检索工具。服务使用 Python 标准库提供 HTTP API，前端为原生 JavaScript，不依赖 Flask、数据库或云服务。
 
+## 演示与成品发布
+
+- 功能演示与成品发布说明：[B站视频 BV1yNhz6cE9Z](https://www.bilibili.com/video/BV1yNhz6cE9Z/)
+- 桌面免安装版、Android APK 等面向用户的成品，由作者发布在该视频评论区。
+- 请以该视频评论区中 UP 主本人发布的置顶评论为准，并核对文件名、版本号和 SHA-256。
+- GitHub 仓库用于源代码、问题反馈、Pull Request、数据包和校验信息。
+
 ## 运行要求
 
 - Python 3.10 或更高版本
