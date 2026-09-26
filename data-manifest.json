@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "version": "1.1.7",
+  "archive": "TM-Search-Data-v1.1.7.zip",
+  "url": "https://github.com/Morgan12326/TM-search/releases/download/v1.1.7/TM-Search-Data-v1.1.7.zip",
+  "sha256": "ba6f8333b62374737750345828dd047d37e55c4aefc6a0ece3186ec764760d24",
+  "requiredFiles": [
+    "corpus.txt",
+    "entries.json",
+    "offsets.json",
+    "story.json",
+    "story_blocks.json",
+    "fgo_story.json",
+    "occurrence_locations.json",
+    "official_interviews.json"
+  ]
+}

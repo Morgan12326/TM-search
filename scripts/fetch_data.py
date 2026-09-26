@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import os
 import shutil
 import sys
@@ -14,6 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DEST = ROOT / "data"
+DEFAULT_MANIFEST = ROOT / "data-manifest.json"
 REQUIRED_FILES = (
     "corpus.txt",
     "entries.json",
@@ -65,12 +67,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Download and install Type-Moon Search data")
     parser.add_argument("--url", default=os.environ.get("TM_SEARCH_DATA_URL", ""))
     parser.add_argument("--sha256", default=os.environ.get("TM_SEARCH_DATA_SHA256", ""))
+    parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--dest", type=Path, default=DEFAULT_DEST)
     parser.add_argument("--force", action="store_true", help="overwrite existing data files")
     args = parser.parse_args()
 
     if not args.url or not args.sha256:
-        parser.error("provide --url and --sha256, or set TM_SEARCH_DATA_URL and TM_SEARCH_DATA_SHA256")
+        if args.manifest.is_file():
+            payload = json.loads(args.manifest.read_text(encoding="utf-8"))
+            args.url = args.url or str(payload.get("url", ""))
+            args.sha256 = args.sha256 or str(payload.get("sha256", ""))
+    if not args.url or not args.sha256:
+        parser.error("provide --url and --sha256, set the environment variables, or create data-manifest.json")
 
     expected = args.sha256.strip().lower()
     if len(expected) != 64 or any(ch not in "0123456789abcdef" for ch in expected):

@@ -151,12 +151,15 @@ $env:TM_SEARCH_DATA_SHA256 = "<SHA256>"
 python scripts/fetch_data.py
 ```
 
-### 数据不能公开
+### 当前公开策略
 
-- 不上传数据 ZIP。
-- 不上传包含数据的桌面 ZIP 和 APK。
-- Public 仓库只保留代码和文档。
-- 使用者必须自行提供有权使用的完整 `data/`。
+维护者已决定公开数据包，并接受相应的权利与下架风险。
+
+- `data/` 不提交进 Git 历史。
+- `TM-Search-Data-v1.1.7.zip` 作为 GitHub Release 资产提供。
+- `data-manifest.json` 记录下载地址、版本、SHA-256 和必需文件。
+- 数据包、桌面 ZIP 和 APK 都可以放在 Release，但不要直接 `git add`。
+- `DATA-NOTICE.md` 必须保留，供权利人和用户了解数据处理方式。
 
 ## Issues 和 Pull Requests
 

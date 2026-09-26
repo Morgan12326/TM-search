@@ -15,10 +15,10 @@
 如果维护者提供了数据包，可以校验并解压到 `data/`：
 
 ```powershell
-python scripts/fetch_data.py --url <数据包URL> --sha256 <SHA256>
+python scripts/fetch_data.py
 ```
 
-也可以设置 `TM_SEARCH_DATA_URL` 和 `TM_SEARCH_DATA_SHA256` 后直接运行脚本。完整说明见 [GitHub 上传与维护指南](docs/GitHub上传与维护指南.md)。
+脚本会读取仓库根目录的 `data-manifest.json`，下载对应 Release 数据包并校验 SHA-256。也可以手动设置 `TM_SEARCH_DATA_URL` 和 `TM_SEARCH_DATA_SHA256` 覆盖默认值。完整说明见 [GitHub 上传与维护指南](docs/GitHub上传与维护指南.md)。
 
 ## 启动
 
