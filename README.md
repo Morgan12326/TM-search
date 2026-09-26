@@ -19,7 +19,7 @@
 
 ## 获取数据
 
-如果维护者提供了数据包，可以校验并解压到 `data/`：
+完整数据包公开在 [v1.1.7 Release](https://github.com/Morgan12326/TM-search/releases/tag/v1.1.7)。脚本会下载并校验数据：
 
 ```powershell
 python scripts/fetch_data.py
@@ -94,7 +94,7 @@ Python 测试会读取完整 `data/`，耗时通常约一到两分钟。部分�
 - `data/` 是运行时数据，不是公开示例数据。
 - 签名材料已移至项目外的 `../签名材料/`，不得上传或复制进代码仓库。
 - `temp/`、缓存和本地生成文件不应进入版本控制。
-- 本仓库当前未选择代码许可证；在公开仓库前必须补充 `LICENSE`。
+- 程序代码使用 MIT License；该许可证不覆盖原作文本、翻译、索引数据或其他第三方内容。
 - 数据来源、翻译授权和再发布范围应由维护者自行核实，详见 [数据与内容说明](DATA-NOTICE.md)。
 - GitHub 上传、数据包和 Issue/PR 配置详见 [GitHub 上传与维护指南](docs/GitHub上传与维护指南.md)。
 
