@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全部词解卡 · 型月搜索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <div class="viewer-bar">
+    <a class="back" href="javascript:history.length>1?history.back():location.href='/'">← 返回搜索结果</a>
+    <span class="jp-toggle" id="defs-stat"></span>
+  </div>
+
+  <header class="doc-head">
+    <h1>「<span id="q-text"></span>」的全部词解卡</h1>
+    <div class="doc-meta" id="defs-sum"></div>
+  </header>
+
+  <div id="alias-tip" class="hidden"></div>
+
+  <div id="items"></div>
+  <div class="load-more hidden" id="load-more"><button id="more" type="button">加载更多</button></div>
+  <footer id="foot" class="status"></footer>
+</div>
+<script src="render.js"></script>
+<script src="defs.js"></script>
+</body>
+</html>

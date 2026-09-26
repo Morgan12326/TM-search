@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>型月搜索 · v1.1.7</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page home-page">
+  <nav class="topnav home-nav" aria-label="主要功能">
+    <a class="nav-brand" href="/">型月搜索</a>
+    <a class="nav-module on" href="/" aria-current="page">
+      <span class="nav-index">01</span>
+      <span class="nav-copy"><strong>词典搜索</strong><small>全文检索设定与原作</small></span>
+    </a>
+    <a class="nav-module" href="encyclopedia.html">
+      <span class="nav-index">02</span>
+      <span class="nav-copy"><strong>百科全书</strong><small>按分类浏览已收录词条</small></span>
+    </a>
+    <a class="nav-module" href="story.html">
+      <span class="nav-index">03</span>
+      <span class="nav-copy"><strong>剧情大全</strong><small>按路线章节阅读原文</small></span>
+    </a>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">TYPE-MOON ARCHIVE</p>
+    <h1>型月搜索<span class="tag">v1.1.7</span></h1>
+    <p class="sub">型月设定 · 剧情 · 访谈原文检索<span>全中文知识库</span></p>
+  </header>
+
+  <section class="search-shell" aria-label="词典检索">
+    <div class="searchrow">
+      <div class="search-scope">
+        <select id="mode" class="picker" title="选择搜索模式" aria-label="搜索模式">
+          <option value="global">全局搜索</option>
+          <option value="local">局部搜索</option>
+        </select>
+        <select id="top" class="picker hidden" title="选择作品大类" aria-label="作品大类"></select>
+        <select id="sub" class="picker hidden" title="选择二级分类" aria-label="二级分类"></select>
+      </div>
+      <div class="searchbox">
+        <input id="q" type="text" autocomplete="off" spellcheck="false"
+               aria-label="搜索词条"
+               placeholder="输入词条，例如：圣杯战争 / 固有结界 / 直死之魔眼">
+        <div id="suggest" class="suggest hidden"></div>
+      </div>
+      <button id="go" type="button">搜索</button>
+    </div>
+
+    <div id="hint" class="hint">
+      <span class="hint-title">试试这些词条</span>
+      <span class="chips" id="hint-chips"></span>
+    </div>
+  </section>
+
+  <main id="results"></main>
+  <footer id="status" class="status"></footer>
+</div>
+<script src="render.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,34 @@
+name: 功能建议
+description: 建议新增功能或改善体验
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 需要解决的问题
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 主要涉及平台
+      options:
+        - 桌面版
+        - 手机版
+        - 数据与检索
+        - 文档与开发体验
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 其他可选方案
+    validations:
+      required: false

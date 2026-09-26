@@ -1,0 +1,32 @@
+# Runtime data (keep only the tracked README)
+data/*
+!data/README.md
+
+# Temporary and build outputs
+temp/
+build/
+dist/
+*.spec
+*.apk
+*.zip
+*.exe
+*.idsig
+*.sha256.txt
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local tooling
+.vscode/
+.idea/
+*.log
+
+# Secrets
+*.jks
+*.keystore
+keystore.properties

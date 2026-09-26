@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剧情大全 · 型月搜索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page wide">
+  <nav class="topnav">
+    <a href="/">词典搜索</a>
+    <a href="encyclopedia.html">百科全书</a>
+    <span class="on">剧情大全</span>
+  </nav>
+
+  <header class="hero">
+    <h1>剧情大全<span class="tag">v1.1.7</span></h1>
+    <p class="sub">型月游戏、小说、广播剧的剧情原文，按作品分类，选章进入阅读</p>
+  </header>
+
+  <div class="wiki-layout">
+    <aside id="tree" class="wiki-tree">读取中…</aside>
+    <section class="wiki-main">
+      <div class="wiki-head">
+        <div class="crumb-bar">
+          <button id="back" class="crumb-back" type="button">← 上一级</button>
+          <span id="crumbs"></span>
+        </div>
+        <h2 id="node-name">请选择左侧分类</h2>
+      </div>
+      <div id="panel" class="chapter-list"></div>
+      <footer id="story-foot" class="status"></footer>
+    </section>
+  </div>
+</div>
+<script src="render.js"></script>
+<script src="story.js"></script>
+</body>
+</html>

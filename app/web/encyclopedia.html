@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>型月百科 · 型月搜索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page wide">
+  <nav class="topnav">
+    <a href="/">词典搜索</a>
+    <span class="on">百科全书</span>
+    <a href="story.html">剧情大全</a>
+  </nav>
+
+  <header class="hero">
+    <h1>型月百科<span class="tag">v1.1.7</span></h1>
+    <p class="sub">按作品分类浏览已经收录的语义（词条），点开任意一条进入详情</p>
+  </header>
+
+  <div class="wiki-layout">
+    <aside id="tree" class="wiki-tree">读取中…</aside>
+    <section class="wiki-main">
+      <div class="wiki-head">
+        <h2 id="leaf-name">请选择左侧分类</h2>
+        <div id="leaf-stat" class="doc-meta"></div>
+        <div class="wiki-tools">
+          <input id="filter" class="wiki-filter" type="text" autocomplete="off"
+                 placeholder="在这个分类里筛选词条…（黑称也可：b叔 / 石油王）">
+          <div id="alias-tip" class="hidden"></div>
+          <span id="leaf-cats" class="chips"></span>
+        </div>
+      </div>
+      <div id="terms"></div>
+      <div id="opening" class="notice hidden"></div>
+      <div class="load-more hidden" id="load-more">
+        <button id="more" type="button">加载更多</button>
+      </div>
+      <footer id="wiki-foot" class="status"></footer>
+    </section>
+  </div>
+</div>
+<script src="render.js"></script>
+<script src="encyclopedia.js"></script>
+</body>
+</html>

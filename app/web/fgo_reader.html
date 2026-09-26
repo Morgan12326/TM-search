@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FGO 剧情 · 型月搜索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="reader-page">
+<div class="page wide">
+  <nav class="topnav">
+    <a href="/">词典搜索</a>
+    <a href="encyclopedia.html">百科全书</a>
+    <a href="story.html">剧情大全</a>
+  </nav>
+
+  <div class="viewer-bar">
+    <a class="back" id="back" href="story.html?key=work%3AFGO">← 返回章节列表</a>
+    <span class="nav">
+      <a class="back" id="prev" href="#">← 上一章</a>
+      <span id="counter"></span>
+      <a class="back" id="next" href="#">下一章 →</a>
+    </span>
+    <span class="jp-toggle" id="source-tag"></span>
+  </div>
+
+  <header class="doc-head">
+    <h1 id="doc-title">读取中…</h1>
+    <div id="doc-meta" class="doc-meta"></div>
+  </header>
+
+  <div class="reader-layout">
+    <aside id="toc" class="reader-toc"></aside>
+    <div id="doc-body" class="doc-body reader-body"></div>
+  </div>
+  <footer id="doc-foot" class="status"></footer>
+</div>
+<script src="render.js"></script>
+<script src="fgo_reader.js"></script>
+<div class="reader-progress"><i id="progress-fill"></i></div>
+</body>
+</html>

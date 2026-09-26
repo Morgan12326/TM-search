@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全部出现位置 · 型月搜索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+  <div class="viewer-bar">
+    <a class="back" href="javascript:history.length>1?history.back():location.href='/'">← 返回搜索结果</a>
+    <span class="nav">
+      <button id="prevw" type="button">上一部作品</button>
+      <button id="nextw" type="button">下一部作品</button>
+    </span>
+    <span class="jp-toggle" id="list-stat"></span>
+  </div>
+
+  <header class="doc-head">
+    <h1>「<span id="q-text"></span>」的全部出现位置</h1>
+    <div class="doc-meta" id="list-sum"></div>
+  </header>
+
+  <div id="alias-tip" class="hidden"></div>
+
+  <div class="work-tabs" id="tabs"></div>
+  <div id="items"></div>
+  <div class="load-more hidden" id="load-more"><button id="more" type="button">加载更多</button></div>
+  <footer id="foot" class="status"></footer>
+</div>
+<script src="render.js"></script>
+<script src="list.js"></script>
+</body>
+</html>
