@@ -1,0 +1,54 @@
+name: Normalize release assets
+
+on:
+  push:
+    paths:
+      - .github/workflows/normalize-release-assets.yml
+      - .github/release/SHA256SUMS-v1.1.7.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    if: github.repository == 'Morgan12326/TM-search'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const release = await github.rest.repos.getReleaseByTag({ owner, repo, tag: 'v1.1.7' });
+            const renames = {
+              '_v1.1.7.apk': 'TM-Search-Android-v1.1.7.apk',
+              '_v1.1.7.zip': 'TM-Search-Desktop-v1.1.7.zip'
+            };
+            for (const [oldName, newName] of Object.entries(renames)) {
+              const asset = release.data.assets.find((item) => item.name === oldName);
+              if (asset) {
+                await github.rest.repos.updateReleaseAsset({
+                  owner, repo, asset_id: asset.id, name: newName
+                });
+              }
+            }
+            const refreshed = await github.rest.repos.getReleaseByTag({ owner, repo, tag: 'v1.1.7' });
+            const checksum = refreshed.data.assets.find((item) => item.name === 'SHA256SUMS.txt');
+            if (checksum) {
+              await github.rest.repos.deleteReleaseAsset({ owner, repo, asset_id: checksum.id });
+            }
+            const data = fs.readFileSync('.github/release/SHA256SUMS-v1.1.7.txt', 'utf8');
+            await github.rest.repos.uploadReleaseAsset({
+              owner,
+              repo,
+              release_id: refreshed.data.id,
+              name: 'SHA256SUMS.txt',
+              headers: {
+                'content-type': 'text/plain; charset=utf-8',
+                'content-length': Buffer.byteLength(data)
+              },
+              data
+            });
